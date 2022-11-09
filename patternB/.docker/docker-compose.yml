@@ -7,10 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         - USERNAME=$USER
-        - UID=1000
-        - GID=1000
-    image: xeyes/sample2:latest
-    container_name: xeyes_container2
+    image: xeyes/patternb:latest
+    container_name: xeyes_containerb
     restart: always
     environment:
       - DISPLAY=$DISPLAY
