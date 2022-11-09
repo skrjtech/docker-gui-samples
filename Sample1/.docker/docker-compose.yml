@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  xeyes1:
+    tty: true
+    build:
+      context: ../.docker
+      dockerfile: Dockerfile
+    image: xeyes/sample1:latest
+    container_name: xeyes_container1
+    restart: always
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - $HOME/.Xauthority:/tmp/.Xauthority
+      - /home/$USER:/home/$USER
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
+      - /etc/sudoers.d:/etc/sudoers.d:ro
+      - ..:/ws
+    user: "${UID}:${GID}"
+    network_mode: host

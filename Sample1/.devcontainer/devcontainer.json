@@ -1,0 +1,12 @@
+{
+    "name": "xeyes app sample 1",
+	"dockerComposeFile": "../.docker/docker-compose.yml",
+	"service": "xeyes1",
+	"workspaceFolder": "/ws",
+	"extensions": [
+		"ms-azuretools.vscode-docker"
+	],
+	"settings": { 
+        "terminal.integrated.defaultProfile.linux": "bash"
+    }
+}
