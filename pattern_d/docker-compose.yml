@@ -9,6 +9,6 @@ services:
       - DISPLAY=$DISPLAY
     volumes:
       - type: bind
-        source: $HOME/.Xauthoriy
-        target: /root/.Xauthoriy.copy
+        source: "${HOME}/.Xauthoriy"
+        target: "/root/.Xauthoriy.copy"
     command: /bin/bash -c "cp /root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
