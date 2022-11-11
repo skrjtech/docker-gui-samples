@@ -8,6 +8,8 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     volumes:
-      - $HOME/.Xauthoriy:/root/.Xauthoriy.copy
+      - type: bind
+        source: $HOME/.Xauthoriy
+        target: /root/.Xauthoriy.copy
     network_mode: host
     command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown root:root .Xauthority; xeyes"
