@@ -22,4 +22,4 @@ services:
         target: /home/main/.Xauthority.copy
       - ..:/home/main/ws
     network_mode: host
-    command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown main:main .Xauthority"
+    # command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown main:main .Xauthority"

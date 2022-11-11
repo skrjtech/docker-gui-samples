@@ -145,5 +145,5 @@ docker compose -f pattern_e/docker-compose.yml up -d
 ## 最後にvscodeでGUI起動する際の話　あっ！サーバー・クライアント間での話しね！
 まずクライアント側でvscodeを実行
 ```
-code pattern_f
+code pattern_f/
 ```
