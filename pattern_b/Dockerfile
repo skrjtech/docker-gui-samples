@@ -1,4 +1,4 @@
-FROM pattern-gui
+FROM pattern-gui:latest
 ARG USERNAME
 ARG GROUPNAME
 ARG PASSWORD

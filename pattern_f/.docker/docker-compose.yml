@@ -2,7 +2,7 @@ version: '3.9'
 services:
   gui:
     build: 
-      context: ../pattern_f
+      context: ../.docker
       dockerfile: Dockerfile
       args:
         - USERNAME=main
@@ -10,7 +10,7 @@ services:
         - PASSWORD=main
         - UID=1000
         - GID=1000
-    image: pattern-gui:ver1
+    image: pattern-gui:ver2
     container_name: gui
     tty: true
     restart: always
@@ -20,6 +20,6 @@ services:
       - type: bind
         source: $HOME/.Xauthority
         target: /home/main/.Xauthority.copy
-      - /home/main/ws
+      - ..:/home/main/ws
     network_mode: host
-    command: /bin/bash -c "cd ~; cp /home/main/.Xauthority.copy /home/main/.Xauthority; chown main:main /home/main/.Xauthority"
+    command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown main:main .Xauthority"
