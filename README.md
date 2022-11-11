@@ -118,5 +118,14 @@ cd docker-gui-samples
 ```
 クライアント側からコンテナを起動
 ```
-
+docker run --rm \
+            -it \
+            --name gui \
+            -e DISPLAY=$DISPLAY \
+            --mount type=bind,src=$HOME/.Xauthority,dst=/root/.Xauthority.copy \
+            --net host \
+            pattern-gui:latest \
+            /bin/bash -c " cp/root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
 ```
+コマンドを実行してしばらく立つとアプリが起動される
+docker composeの場合

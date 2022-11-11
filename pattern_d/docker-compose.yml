@@ -8,12 +8,7 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     volumes:
-      - /$HOME/.Xauthority:/root/.Xauthority.copy
-      - /etc/group:/etc/group:ro
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/shadow:/etc/shadow:ro
-      - /etc/sudoers.d:/etc/sudoers.d:ro
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    user: "${UID}:${GID}"
-    working_dir: /home/$USER
+      - type: bind
+        source: $HOME/.Xauthoriy
+        target: /root/.Xauthoriy.copy
     command: /bin/bash -c "cp /root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
