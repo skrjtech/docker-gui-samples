@@ -135,6 +135,15 @@ docker run --rm \
 docker composeの場合 \
 Containerを起動
 ```
-docker compose -f pattern_d up -d
+docker compose -f pattern_d/docker-compose.yml up -d
 ```
-しばらく立つとアプリが起動される 
+しばらく立つとアプリが起動される  \
+別パターンでユーザーを追加したパターン
+```
+docker compose -f pattern_e/docker-compose.yml up -d
+```
+## 最後にvscodeでGUI起動する際の話　あっ！サーバー・クライアント間での話しね！
+まずクライアント側でvscodeを実行
+```
+code pattern_f
+```

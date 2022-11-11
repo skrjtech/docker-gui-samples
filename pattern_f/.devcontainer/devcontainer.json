@@ -1,0 +1,12 @@
+{
+    "name": "gui",
+	"dockerComposeFile": "../.docker/docker-compose.yml",
+	"service": "gui",
+	"workspaceFolder": "/home/main/ws",
+	"extensions": [
+		"ms-azuretools.vscode-docker"
+	],
+	"settings": { 
+        "terminal.integrated.defaultProfile.linux": "bash"
+    }
+}
