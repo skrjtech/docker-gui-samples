@@ -11,4 +11,5 @@ RUN set -x \
     && echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USERNAME
 WORKDIR /home/$USER/ws
+RUN echo 'alias guiInit="cp /home/$USER/.Xauthority.copy /home/$USER/.Xauthority && chown $USER:$USER /home/$USER/.Xauthority"' >> /home/$USER/.bashrc
 CMD [ "/bin/bash" ]

@@ -152,5 +152,16 @@ code pattern_f/
 できたところまで
 直接起動
 ```
-
+docker composer -f pattern_f/.docker/docker-compose.yml up -d
+```
+vscodeのRemote ExplorerからContainerに入る
+あとはGUI表示準備をして
+```
+cp /home/main/.Xauthority.copy /home/main/.Xauthority
+chown main:main /home/main/.Xauthority
+```
+もしくは
+最後にアプリを起動
+```
+xeyes
 ```
