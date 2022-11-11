@@ -10,4 +10,4 @@ services:
     volumes:
       - $HOME/.Xauthoriy:/root/.Xauthoriy.copy
     network_mode: host
-    command: /bin/bash -c "cp /root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
+    command: /bin/bash -c "cd; cp .Xauthoriy.copy .Xauthority; chown root:root .Xauthority; xeyes"
