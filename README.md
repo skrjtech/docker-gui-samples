@@ -160,7 +160,6 @@ vscodeのRemote ExplorerからContainerに入る
 cp /home/main/.Xauthority.copy /home/main/.Xauthority
 chown main:main /home/main/.Xauthority
 ```
-もしくは
 最後にアプリを起動
 ```
 xeyes
