@@ -21,4 +21,4 @@ services:
         source: $HOME/.Xauthority
         target: /home/$USER/.Xauthority.copy
     network_mode: host
-    command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown $USER:$USER .Xauthority; xeyes"
+    command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown root:root .Xauthority; xeyes"
