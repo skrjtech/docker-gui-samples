@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  gui:
+    image: pattern-gui
+    container_name: gui
+    tty: true
+    restart: always
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: /bin/bash -c "xeyes"
+    
