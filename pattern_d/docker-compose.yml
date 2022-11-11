@@ -11,4 +11,5 @@ services:
       - type: bind
         source: "${HOME}/.Xauthoriy"
         target: "/root/.Xauthoriy.copy"
+    network_mode: host
     command: /bin/bash -c "cp /root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
