@@ -31,7 +31,7 @@ docker run --rm \
 xeyes
 ```
 アプリが起動したら成功 \
-コンテナに, \
+Containerに, \
 -e DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 を与えることによってなんちゃらが共有されてGUIの表示ができる
