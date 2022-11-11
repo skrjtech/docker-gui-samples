@@ -128,28 +128,13 @@ docker run --rm \
             -e DISPLAY=$DISPLAY \
             --mount type=bind,src=$HOME/.Xauthority,dst=/root/.Xauthority.copy \
             --net host \
-            pattern-gui:latest
+            pattern-gui:latest \
+            /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown root:root .Xauthority; xeyes"
 ```
-Containerに入ったら次のコマンドを実行してxeyesを起動
-```
-cd ~
-cp .Xauthoriy.copy .Xauthority
-chown root:root .Xauthority
-xeyes
-```
+しばらく立つとアプリが起動される \
 docker composeの場合 \
 Containerを起動
 ```
 docker compose -f pattern_d up -d
 ```
-Containerに入る
-```
-docker exec -it gui bash
-```
-以下省略
-```
-cd ~
-cp .Xauthoriy.copy .Xauthority
-chown root:root .Xauthority
-xeyes
-```
+しばらく立つとアプリが起動される 
