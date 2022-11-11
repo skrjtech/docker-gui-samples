@@ -3,7 +3,7 @@ GUIの表示に困っているピーポーに救済の手を...
 ## はじめに
 リポジトリをクローンして移動
 ```
-https://github.com/skrjtech/docker-gui-samples.git
+git clone https://github.com/skrjtech/docker-gui-samples.git
 cd docker-gui-samples
 ```
 イメージを作成
@@ -113,7 +113,7 @@ xeyes
 を実行して表示されていたら, とりあえず成功
 サーバー側にリポジトリをクローン
 ```
-https://github.com/skrjtech/docker-gui-samples.git
+git clone https://github.com/skrjtech/docker-gui-samples.git
 cd docker-gui-samples
 ```
 クライアント側からコンテナを起動
