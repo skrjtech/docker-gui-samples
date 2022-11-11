@@ -30,7 +30,7 @@ docker run --rm \
 ```
 xeyes
 ```
-アプリが起動したら成功
+アプリが起動したら成功 \
 コンテナに, \
 -e DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
