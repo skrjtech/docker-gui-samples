@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  gui:
+    build: 
+      context: ../pattern_b
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=main
+        - GROUPNAME=main
+        - PASSWORD=main
+        - UID=1000
+        - GID=1000
+    image: pattern-gui:ver1
+    container_name: gui
+    tty: true
+    restart: always
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - type: bind
+        source: $HOME/.Xauthority
+        target: /home/$USER/.Xauthority.copy
+    network_mode: host
+    command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown $USER:$USER .Xauthority; xeyes"
