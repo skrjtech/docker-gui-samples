@@ -9,7 +9,7 @@ services:
       - DISPLAY=$DISPLAY
     volumes:
       - type: bind
-        source: $HOME/.Xauthoriy
-        target: /root/.Xauthoriy.copy
+        source: $HOME/.Xauthority
+        target: /root/.Xauthority.copy
     network_mode: host
     command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown root:root .Xauthority; xeyes"
