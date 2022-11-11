@@ -131,5 +131,15 @@ docker run --rm \
             pattern-gui:latest \
             /bin/bash -c "cd; cp .Xauthoriy.copy .Xauthority; chown root:root .Xauthority; xeyes"
 ```
+```
+docker run --rm \
+            -it \
+            --name gui \
+            -e DISPLAY=$DISPLAY \
+            -v $HOME/.Xauthority:/root/.Xauthority.copy \
+            --net host \
+            pattern-gui:latest \
+            /bin/bash -c "cd; cp .Xauthoriy.copy .Xauthority; chown root:root .Xauthority; xeyes"
+```
 コマンドを実行してしばらく立つとアプリが起動される
 docker composeの場合
