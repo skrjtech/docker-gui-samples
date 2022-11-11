@@ -19,6 +19,6 @@ services:
     volumes:
       - type: bind
         source: $HOME/.Xauthority
-        target: /home/$USER/.Xauthority.copy
+        target: /home/main/.Xauthority.copy
     network_mode: host
     # command: /bin/bash -c "cd ~; cp .Xauthority.copy .Xauthority; chown root:root .Xauthority; xeyes"
