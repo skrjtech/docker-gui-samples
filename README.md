@@ -34,8 +34,8 @@ xeyes
 Containerに, \
 -e DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-を与えることによってなんちゃらが共有されてGUIの表示ができる
-注意) サーバー/クライアントの場合では別な方法で起動する また後に紹介
+を与えることによってなんちゃらが共有されてGUIの表示ができる \
+注意) サーバー/クライアントの場合では別な方法で起動する また後に紹介 \
 docker compose にファイルを指定して起動
 ```
 docker compose -f ./pattern_a/docker-compose.yml up -d
