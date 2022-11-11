@@ -2,6 +2,7 @@
     "name": "gui",
 	"dockerComposeFile": "../.docker/docker-compose.yml",
 	"service": "gui",
+	"remoteUser": "main",
 	"workspaceFolder": "/home/main/ws",
 	"extensions": [
 		"ms-azuretools.vscode-docker"

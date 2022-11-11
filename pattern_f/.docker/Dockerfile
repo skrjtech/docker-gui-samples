@@ -10,5 +10,4 @@ RUN set -x \
     && echo $USERNAME:$PASSWORD | chpasswd \
     && echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USERNAME
-WORKDIR /home/$USERNAME/ws
 CMD [ "/bin/bash" ]

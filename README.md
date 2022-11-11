@@ -147,3 +147,10 @@ docker compose -f pattern_e/docker-compose.yml up -d
 ```
 code pattern_f/
 ```
+〜ん、いろいろ試した結果何故かvscodeからコンテナを開くことができない...
+
+できたところまで
+直接起動
+```
+
+```
