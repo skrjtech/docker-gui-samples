@@ -27,17 +27,22 @@ docker run --rm \
             pattern-gui
 ```
 コンテナの中に入ったらアプリを起動 \
-アプリが起動した成功
 ```
 xeyes
 ```
+アプリが起動したら成功
+コンテナに, \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+を与えることによってなんちゃらが共有されてGUIの表示ができる
+注意) サーバー/クライアントの場合では別な方法で起動する また後に紹介
 docker compose にファイルを指定して起動
 ```
 docker compose -f ./pattern_a/docker-compose.yml up -d
 ```
-バックグラウンドで起動してアプリが起動した成功
+バックグラウンドで起動してアプリが起動したら成功
 ## ユーザーを追加して起動
-引数をしてしてイメージ作成
+引数を指定してイメージを作成
 ```
 docker build -t pattern-gui:ver1 ./pattern_b    \
                     --build-arg USERNAME=main   \
@@ -46,3 +51,41 @@ docker build -t pattern-gui:ver1 ./pattern_b    \
                     --build-arg UID=1000        \
                     --build-arg GID=1000
 ```
+コンテナの起動
+```
+docker run --rm \
+            -it \
+            --name gui \
+            -e DISPLAY=$DISPLAY \
+            -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+            pattern-gui:ver1
+```
+コンテナの中に入ったらアプリを起動 \
+```
+xeyes
+```
+アプリが起動したら成功
+docker compose にファイルを指定して起動
+```
+docker compose -f ./pattern_a/docker-compose.yml up -d
+```
+バックグラウンドで起動してアプリが起動したら成功
+## ホスト側のユーザーを追加してアプリを起動
+```
+docker run -it \
+    --user=$(id -u $USER):$(id -g $USER) \
+    --env="DISPLAY" \
+    --workdir="/home/$USER" \
+    --volume="/home/$USER:/home/$USER" \
+    --volume="/etc/group:/etc/group:ro" \
+    --volume="/etc/passwd:/etc/passwd:ro" \
+    --volume="/etc/shadow:/etc/shadow:ro" \
+    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    pattern-gui:latest
+```
+コンテナの中に入ったらアプリを起動 \
+```
+xeyes
+```
+アプリが起動したら成功
