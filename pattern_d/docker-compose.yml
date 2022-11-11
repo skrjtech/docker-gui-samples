@@ -1,21 +1,19 @@
 version: '3.9'
 services:
-  xeyes3:
+  gui:
+    image: pattern-gui:latest
+    container_name: gui
     tty: true
-    build:
-      context: ../.docker
-      dockerfile: Dockerfile
-    image: xeyes/patternc:latest
-    container_name: xeyes_containerc
     restart: always
     environment:
       - DISPLAY=$DISPLAY
     volumes:
-      - /home/$USER:/home/$USER
+      - /$HOME/.Xauthority:/root/.Xauthority.copy
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
       - /etc/sudoers.d:/etc/sudoers.d:ro
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     user: "${UID}:${GID}"
-    network_mode: host
+    working_dir: /home/$USER
+    command: /bin/bash -c "cp /root/.Xauthoriy.copy /root/.Xauthority; chown root:root /root/.Xauthority; xeyes"
